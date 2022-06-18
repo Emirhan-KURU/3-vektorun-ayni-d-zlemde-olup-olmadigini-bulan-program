@@ -1,0 +1,32 @@
+// 3 vektorun ayni düzlemde olup olmadigini bulan program
+
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+    float vektor1[3],vektor2[3],vektor3[3];
+    float a,b,c,u,s,det,det1,det2;
+
+    printf("birinci vektoru girin:\t");
+    scanf("%f%f%f",&vektor1[0],&vektor1[1],&vektor1[2]); 
+    printf("ikinci vektoru girin:\t");
+    scanf("%f%f%f",&vektor2[0],&vektor2[1],&vektor2[2]);
+    printf("ucunci vektoru girin:\t");
+    scanf("%f%f%f",&vektor3[0],&vektor3[1],&vektor3[2]);
+
+    det1 = (vektor1[0]*vektor2[1]*vektor3[2])+(vektor1[1]*vektor2[2]*vektor3[0])+(vektor1[2]*vektor2[0]*vektor3[1]);
+    det2 = (vektor1[2]*vektor2[1]*vektor3[0])+(vektor1[0]*vektor2[2]*vektor3[1])+(vektor1[1]*vektor2[0]*vektor3[2]);
+    
+    det = det1-det2;
+
+    if(det == 0)
+        printf("vektorler ayni duzlemdedir.");
+    else
+    {
+        printf("vektorler ayni duzlemde degil.\n");
+        printf("det = %f",det);
+    }
+
+    return 0;
+}
